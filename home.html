@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payoo Home Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="flex justify-center mt-8">
+      <div class="mockup-phone border-primary">
+        <div class="camera"></div>
+        <div class="display">
+          <div class="artboard artboard-demo phone-1">
+            <!--Available Balance-->
+            <div class="text-center mb-4">
+              <div class="stats shadow">
+                <div class="stat">
+                  <div class="stat-value">89,400</div>
+                  <div class="stat-desc">Available Balance</div>
+                </div>
+              </div>
+            </div>
+
+            <!--User Action Buttons-->
+            <div class="flex justify-around mb-4">
+              <button class="btn btn-lg" onclick="toggleForm()">
+                Add Money
+              </button>
+              <button class="btn btn-lg">Cash Out</button>
+            </div>
+
+            <!--Add Money Form Start-->
+            <div id="add-money-form" class="hidden mt-4">
+              <div class="card bg-base-100 w-full max-w-sm shadow-2xl">
+                <form class="card-body">
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Amount</span>
+                    </label>
+                    <input
+                      id="input-add-money"
+                      type="text"
+                      placeholder="Enter amount"
+                      class="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Pin</span>
+                    </label>
+                    <input
+                      id="input-pin-number"
+                      type="password"
+                      placeholder="Enter pin"
+                      class="input input-bordered"
+                      autocomplete="off"
+                      required
+                    />
+                  </div>
+                  <div class="form-control mt-6">
+                    <button id="btn-add-money" class="btn btn-primary">
+                      Confirm
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--Add Money Form End-->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function toggleForm() {
+        const form = document.getElementById("add-money-form");
+        form.classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>
